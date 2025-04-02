@@ -1,8 +1,6 @@
-<template>
-  <main class="flex flex-col flex-grow justify-center items-center flex-grow bg-no-repeat bg-cover bg-center" style="background-image: url('/images/Tobey.jpg'); background-size: cover;">
-
+<template><main class="flex flex-col flex-grow justify-center items-center flex-grow bg-no-repeat bg-cover bg-center" style="background-image: url('/images/Tobey.jpg'); background-size: cover;">
+  
     
-    <!-- Контейнер для кнопок -->
     <div class="flex gap-4 mb-6">
       <label class="Spider" v-for="(picture, index) in pictures" :key="index">
         <input class="mx-2" type="radio" :value="picture.name" v-model="selectedpic">
@@ -10,7 +8,7 @@
       </label>
     </div>
     
-    <!-- Контейнер для картинок и видео -->
+
     <div class="flex flex-col items-center gap-4">
       
       <div v-if="selectedImage" class="blockcap" @click="toggleAudio">
@@ -18,9 +16,9 @@
         <p class="text-black text-xl">{{ selectedpic }}</p>
       </div>
 
-      <div v-if="selectedVideo" class="block2">
+      <div v-if="selectedVid" class="block2">
         <video ref="videoPlayer" controls autoplay class="w-full h-[350px] object-cover rounded-lg">
-          <source :src="selectedVideo" type="video/mp4">
+          <source :src="selectedVid" type="video/mp4">
         </video>
       </div>
 
@@ -60,9 +58,9 @@ const audio = ref<HTMLAudioElement | null>(null)
 const videoPlayer = ref<HTMLVideoElement | null>(null)
 const isPlaying = ref(false)
 
-// Автоматически выбираем картинку и видео по выбранному названию
+
 const selectedImage = computed(() => pictures.find(item => item.name === selectedpic.value)?.image || '')
-const selectedVideo = computed(() => videos.find(item => item.name === selectedpic.value)?.video || '')
+const selectedVid = computed(() => videos.find(item => item.name === selectedpic.value)?.video || '')
 
 const toggleAudio = () => {
   if (audio.value) {
@@ -75,7 +73,7 @@ const toggleAudio = () => {
   }
 }
 
-// Автообновление видео при смене фильма
+
 watch(selectedpic, () => {
   if (videoPlayer.value) {
     videoPlayer.value.load()
