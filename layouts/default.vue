@@ -2,10 +2,10 @@
   <header class="flex flex-row w-full items-center max-sm:justify-between bg-green-400 border-b-2 border-grey-400 relative text-xl text-black">
     
     <div class="basis-1/4 flex items-center justify-start px-4">
-      <img src="./assets/images/circle.png" alt="Logo" class="w-20 h-16 bg-transparent">
+      <img src="/images/circle.png" alt="Logo" class="w-20 h-16 bg-transparent">
     </div>
     
-    <div class="basis-1/4 max-sm:basis-auto"></div>
+    
 
     
     <nav :class="{
@@ -46,15 +46,15 @@
   </header>
 
   
-  <main class="p-5 flex bg-green-100 h-screen">
+  <main class="p-5 flex bg-green-100 min-h-screen">
     <slot />
   </main>
 
   
   <footer class="flex flex-row w-full bg-green-400 border-t-2 border-gray-400 items-center justify-center px-4 py-2 gap-4">
-    <a href=""><img src="./assets/images/youtube.png" class="w-16 h-16"></a>
-    <a href="https://github.com/"><img src="./assets/images/github.png" class="w-16 h-16"></a>
-    <a href="https://www.facebook.com"><img src="./assets/images/Facebook.png" class="w-16 h-16 bg-transparent"></a>
+    <a href=""><img src="/images/youtube.png" class="w-16 h-16"></a>
+    <a href="https://github.com/"><img src="/images/github.png" class="w-16 h-16"></a>
+    <a href="https://www.facebook.com"><img src="/images/Facebook.png" class="w-16 h-16 bg-transparent"></a>
   </footer>
 </template>
 
